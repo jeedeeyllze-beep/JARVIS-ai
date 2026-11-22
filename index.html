@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JARVIS AI Assistant</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #070d19;
+      color: #e5f5ff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 450px;
+      padding: 30px 20px;
+      text-align: center;
+      background: #101d30;
+      border: 1px solid #087da8;
+      border-radius: 20px;
+      box-shadow: 0 0 25px #008cff33;
+    }
+
+    h1 {
+      color: #00c8ff;
+      letter-spacing: 6px;
+    }
+
+    .status {
+      color: #51e6a5;
+      font-size: 12px;
+    }
+
+    .orb {
+      width: 120px;
+      height: 120px;
+      margin: 35px auto;
+      border: 3px solid #00c8ff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 42px;
+      color: #00c8ff;
+      box-shadow: 0 0 30px #00c8ff77;
+    }
+
+    #response {
+      min-height: 50px;
+      color: #b9d9ed;
+      line-height: 1.6;
+    }
+
+    input {
+      width: 100%;
+      padding: 15px;
+      background: #071321;
+      border: 1px solid #087da8;
+      border-radius: 10px;
+      color: white;
+      outline: none;
+      font-size: 15px;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      margin-top: 12px;
+      background: #009dcc;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-weight: bold;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    button:active {
+      background: #00749b;
+    }
+
+    .footer {
+      margin-top: 25px;
+      color: #7895a9;
+      font-size: 11px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>J.A.R.V.I.S.</h1>
+
+    <p class="status">
+      ● SYSTEM ONLINE
+    </p>
+
+    <div class="orb">J</div>
+
+    <p id="response">
+      Hello! I am JARVIS.
+      How may I assist you today?
+    </p>
+
+    <input
+      type="text"
+      id="command"
+      placeholder="Enter your command..."
+    >
+
+    <button onclick="respond()">
+      SEND COMMAND
+    </button>
+
+    <p class="footer">
+      PERSONAL AI ASSISTANT | VERSION 0.1
+    </p>
+
+  </div>
+
+  <script>
+    function respond() {
+
+      const input = document.getElementById("command");
+
+      const response = document.getElementById("response");
+
+      const command = input.value.trim().toLowerCase();
+
+      if (command === "") {
+        response.textContent = "Please enter a command.";
+      }
+
+      else if (command.includes("hello")) {
+        response.textContent = "Hello! How can I help you?";
+      }
+
+      else if (command.includes("your name")) {
+        response.textContent = "I am JARVIS, your personal assistant.";
+      }
+
+      else if (command.includes("time")) {
+        response.textContent = "Your current device time is " + new Date().toLocaleTimeString();
+      }
+
+      else if (command.includes("date")) {
+        response.textContent = "Today's date is " + new Date().toLocaleDateString();
+      }
+
+      else if (command.includes("help")) {
+        response.textContent = "You can ask me about my name, time, date, or say hello.";
+      }
+
+      else {
+        response.textContent =
+          "I received your command: " +
+          input.value +
+          ". My advanced AI connection is coming soon.";
+      }
+
+      input.value = "";
+    }
+  </script>
+
+</body>
+</html>

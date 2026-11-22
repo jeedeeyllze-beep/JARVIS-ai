@@ -1,6 +1,3 @@
-# JARVIS-ai
-JARVIS.AI personal ai assistant project
-
 # JARVIS AI
 
 A personal AI assistant inspired by J.A.R.V.I.S. from Iron Man.
